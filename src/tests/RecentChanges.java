@@ -29,13 +29,13 @@ public class RecentChanges {
 		String sResults=library.getRecentChanges("5", "");
 		Log.info(sResults);
 		//getCount(sResults);
-		checkResults("5", getCount(sResults));
+		Log.checkResults("5", getCount(sResults));
 		
 		Log.info("Test Recent Changes using limit of 1");
 		sResults=library.getRecentChanges("1", "", "");
 		//Log.info(sResults);
 		//getCount(sResults);
-		checkResults("1", getCount(sResults));
+		Log.checkResults("1", getCount(sResults));
 
 		Log.info("Test Recent Changes using limit of -1");
 		sResults=library.getRecentChanges("-1", "", "");
@@ -50,13 +50,13 @@ public class RecentChanges {
 		sResults=library.getRecentChanges("15", "", "");
 		//Log.info(sResults);
 		//getCount(sResults);
-		checkResults("15", getCount(sResults));
+		Log.checkResults("15", getCount(sResults));
 
 		Log.info("Test Recent Changes using limit of 0 returns 0");
 		sResults=library.getRecentChanges("0", "", "");
 		Log.info(sResults);
 		//getCount(sResults);
-		checkResults("0", getCount(sResults));
+		Log.checkResults("0", getCount(sResults));
 
 		Log.info("Test Recent Changes using limit of string test");
 		sResults=library.getRecentChanges("test", "", "");
@@ -71,19 +71,12 @@ public class RecentChanges {
 		//max is 1000		
 		Log.info("Test Recent Changes using limit of empty string, default of 1000 returned");
 		sResults=library.getRecentChanges("", "", "");
-		checkResults("1000", getCount(sResults));
+		Log.checkResults("1000", getCount(sResults));
 		//Log.info(sResults);
 		//getCount(sResults);
 		
 	}
 	
-	public static void checkResults(String sExp, String sAct)
-	{
-		if (sExp.equalsIgnoreCase(sAct))
-			Log.pass("Expected number of recent changes returned "+sExp);
-		else
-			Log.fail("Expected number of recent changes not returned " + sExp + ":" + sAct);
-	}
 
 	public static String getCount(String sResults)
 	{

@@ -1,9 +1,12 @@
 package tests;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import tasks.library;
 import utility.Log;
 
-public class QueryTest {
+public class EditionsAndAuthorsTest {
 	
 	public static String sAuthor1="OL1A";
 	public static String sBook1="OL2040129W";
@@ -16,7 +19,8 @@ public class QueryTest {
 		//ok works now 51 results
 		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "*", "", "");
 		//works
-		String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "id", "", "");
+		String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "", "", "");
+		Log.checkResults("18", getCount(sResults));
 		//good returns just the keys
 		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "", "", "");
 		//returns key and title
@@ -36,7 +40,24 @@ public class QueryTest {
 		//doesnt work
 		Log.info(sResults);
 		//TODO: get list of author works and compare to master
-		Log.endTestCase("Author test");
+		Log.endTestCase("Edition & Authors test");
+	}
+	
+	public static String getCount(String sResults)
+	{
+		try {
+			JSONArray obj = new JSONArray(sResults);
+			//returns how many authors editions...subtract 1 so we dont count author
+			String sRes=Integer.toString(obj.length()-1);
+			Log.info(sRes);
+			return sRes;
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
 	}
 
+	
 }

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 public class Book {
 	
-	//TODO: add long version of data inc modified, authors, works, type, etc.
+	//TODO: add rest of the fields
 	private static final String gsTitle="title";
 	private static final String gsPrice="price";
 	private static final String gsNumPages="number_of_pages";

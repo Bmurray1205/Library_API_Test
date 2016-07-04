@@ -143,6 +143,15 @@ public class Log {
 	public static void debug(String message) {
 		Log.debug(message);
 	}
+	
+	public static void checkResults(String sExp, String sAct)
+	{
+		if (sExp.equalsIgnoreCase(sAct))
+			pass("Expected number of results returned "+sExp);
+		else
+			fail("Expected number of results not returned " + sExp + ":" + sAct);
+	}
+
 
 	/**
 	 * Sleep for a specified number of seconds

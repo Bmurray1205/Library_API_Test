@@ -7,7 +7,7 @@ import utility.Log;
 
 public class Author {
 
-	//TODO: add long version of data inc modified, type, etc.
+	//TODO: add rest of the fields
 	private static final String gsName="name";
 	private static final String gsPersonalName="personal_name";
 	private static final String gsDeath="death_date";
