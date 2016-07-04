@@ -71,6 +71,12 @@ public class AuthorTest1 {
 	public static void testNegAuthor(String sAuthor)
 	{
 		String sResults=library.getAuthor("OASDJ!", library.gsJSON, false);
+		
+		String sExpErr="\"error\": \"notfound\"";
+		if (sResults.contains(sExpErr))
+			Log.pass("Error was correctly found: " + sExpErr);
+		else
+			Log.fail("Error was not correctly found: " + sExpErr);
 		if (sResults.contains("\"error\": \"notfound\""))
 			Log.pass("Error was correctly found");
 		else

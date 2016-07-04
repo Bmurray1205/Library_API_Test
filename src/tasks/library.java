@@ -26,6 +26,7 @@ public class library {
 	public static final String gsSetOffset="offset=";
 	public static final String gsRecentChanges="/recentchanges.json";
 	public static final String gsEditionsAuthors="/query.json?type=/type/edition&authors=/authors/";
+	public static final String gsEditionsWorks="/query.json?type=/type/edition&works=/works/";
 	public static final String gsJSON = ".json";
 	public static final String gsRDF = ".rdf";
 	
@@ -216,6 +217,7 @@ public class library {
 	* @return String - the results of the call
 	* @author Brian Murray   	
 	*/
+	//curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A'
 	public static String getQueryEditionsAndAuthors (String sKey, String sProps, String sNum, String sOffSet)
 	{
 		if (sProps.length()>0)
@@ -225,6 +227,33 @@ public class library {
 		if (sOffSet.length()>0)
 			sProps=sProps+"&"+gsSetOffset+sOffSet;
 		String sToolString = constructCurlString3 (gsLibraryRoot+gsEditionsAuthors+sKey+sProps);
+		runCurl(sToolString);
+		return getSearchResultsString();
+	}
+	
+	/** 
+	* getQueryEditionsAndAuthors - Get Editions and Authors
+	* @return String - the results of the call
+	* @author Brian Murray   	
+	*/
+	//curl 'http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W'
+	public static String getQueryEditionsAndWorks (String sKey, String sProps, String sNum, String sOffSet)
+	{
+		if (sProps.length()>0)
+			sProps="&"+sProps+"=";
+		if (sNum.length()>0)
+			sProps=sProps+"&"+gsSetLimit+sNum;
+		if (sOffSet.length()>0)
+			sProps=sProps+"&"+gsSetOffset+sOffSet;
+		String sToolString = constructCurlString3 (gsLibraryRoot+gsEditionsWorks+sKey+sProps);
+		runCurl(sToolString);
+		return getSearchResultsString();
+	}
+	
+	public static String login ()
+	{
+
+		String sToolString = "cmd /C " + gsToolsPath + "curl.exe -i -H 'Content-Type: application/json' -d '{\"username\": \"joe\", \"password\": \"secret\"}' https://openlibrary.org/account/login";// HTTP/1.1 200 OK Set-Cookie: session=\"/user/joe%2C2009-02-19T07%3A52%3A13%2C74fc6%24811f4c2e5cf52ed0ef83b680ebed861f\"; Path=/";
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
@@ -240,7 +269,7 @@ public class library {
 	public static String getBookEditions (String sKey, String sNum, String sOffSet)
 	{
 		if (sNum.length()>0)
-			sNum="&"+gsSetLimit+sNum;
+			sNum="?"+gsSetLimit+sNum;
 		if (sOffSet.length()>0)
 			sNum=sNum+"&"+gsSetOffset+sOffSet;
 		String sToolString = constructCurlString (gsLibraryRoot+gsWorks+sKey+gsBookEditions+sNum);

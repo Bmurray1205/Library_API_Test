@@ -9,7 +9,7 @@ Notes on testing:
 
 	or like this: OL4731M
 
-2. I didn't code examples using RDF format as I was time limited and was unfamiliar with RDF format.  I did begin the research on JENA and read about it, but decided it was best to focus on more coverage than including this
+2. I didn't code examples using RDF format as I was time limited and was unfamiliar with RDF format.  I did begin the research on JENA and read about it, but decided it was best to focus on more coverage than including this.    
 
 3. I couldn't see to get this format to work even when used exactly like this:
 	curl -s -H 'Accept: application/json' https://openlibrary.org/books/OL1M
@@ -28,8 +28,12 @@ which is CURLE_UNSUPPORTED_PROTOCOL (1)
 
 The URL you passed to libcurl used a protocol that this libcurl does not support. The support might be a compile-time option that you didn't use, it can be a misspelled protocol string or just a protocol libcurl has no code for. 
 
-5. I couldnt seem to get offsets to work.  Index works.
+5. I couldnt get offsets to work.  Index works.
 
 6. results to modifications to objects of specified type, specified key and by an author respectively did not seem to work either
 
 7. Status codes didnt seem to work for me.  Supposed to get get "Status code 200 OK is returned when the request is handled successfully." I never saw this.
+
+8. negative numbers when used for limit didnt return an error in author query.  Same with using a string.  i9t just returned the default limit of 20.  In other queries negative and string returned error messages
+
+9. I played with Login a little, but coulnt get it to work.  I did get a couple of different error codes depending on what i tried.  I suspect this was my error.

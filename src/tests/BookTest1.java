@@ -64,10 +64,11 @@ public class BookTest1 {
 	public static void testNegBook(String sBook)
 	{
 		String sResults=library.getAuthor("OASDJ!", library.gsJSON, false);
-		if (sResults.contains("\"error\": \"notfound\""))
-			Log.pass("Error was correctly found");
+		String sExpErr="\"error\": \"notfound\"";
+		if (sResults.contains(sExpErr))
+			Log.pass("Error was correctly found: " + sExpErr);
 		else
-			Log.fail("Error was not correctly found");
+			Log.fail("Error was not correctly found: " + sExpErr);
 	}
 	
 	public static void testBookEditions (String sBook)
@@ -76,7 +77,7 @@ public class BookTest1 {
 		//first no limit and make sure default limit of 20 is imposed if num works greater than 20
 		Log.info("Test Book Editions using default");
 		String sResults=library.getBookEditions(sBook, "", "");
-		Log.info(sResults);
+		//Log.info(sResults);
 		try {
 			JSONObject obj = new JSONObject(sResults);
 			//returns how many authors works
@@ -96,26 +97,6 @@ public class BookTest1 {
 		//test limit < default and less than expected size
 		Log.info("Test Author Works using limit of 3");
 		sResults=library.getBookEditions(sBook, "3", "");
-		Log.info(sResults);
-		try {
-			JSONObject obj = new JSONObject(sResults);
-			//returns how many authors works
-			String sEditions = obj.getString("size");
-			//not sure why but size value is off by one
-			int iEditions = Integer.parseInt(sEditions);
-			Log.info("Book " + sBook + " has " + iEditions + " Works");
-			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
-			checkWorksCount(iEditions, getArray.length(), 3);
-
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//test limit = negative 1 is bad query and returns previous set of results
-		Log.info("Test Author Works using limit of -1");
-		sResults=library.getBookEditions(sBook, "-1", "");
 		//Log.info(sResults);
 		try {
 			JSONObject obj = new JSONObject(sResults);
@@ -133,6 +114,17 @@ public class BookTest1 {
 			e.printStackTrace();
 		}
 		
+		//test limit = negative 1 is bad query and returns previous set of results
+		//unlike author test this returns an error
+		//LIMIT must not be negative
+		Log.info("Test Author Works using limit of -1");
+		sResults=library.getBookEditions(sBook, "-1", "");
+		//Log.info(sResults);
+		String sExpErr="LIMIT must not be negative";
+		if (sResults.contains(sExpErr))
+			Log.pass("Error was correctly found: " + sExpErr);
+		else
+			Log.fail("Error was not correctly found: " + sExpErr);
 		
 		//test limit = string acts like default
 		Log.info("Test Author Works using limit of string");
