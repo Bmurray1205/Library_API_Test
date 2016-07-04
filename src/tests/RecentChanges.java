@@ -14,7 +14,7 @@ public class RecentChanges {
 		//doesn't work when i try to add 
 		//Parameters, type, key and author can be specified to limit the results to modifications to objects of specified type, specified key and by an author respectively
 		//String sResults=library.getRecentChanges("5", "", "edit-book");
-		//Log.info(sResults);
+		//Log.info(sResults);//check
 		//getCount(sResults);
 		//offset doesnt seem to work
 		//String sResults=library.getRecentChanges("5", "2");
