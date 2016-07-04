@@ -1,0 +1,1 @@
+C:\Users\GoodHome\workspace\curl\curl http://openlibrary.org/authors/OL1A.json -k -o results.txt

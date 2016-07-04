@@ -1,0 +1,15 @@
+2016-07-02 21:14:36  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-02 21:14:36  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json?m=history -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-02 21:14:37  [utility.Log] (main:)  [INFO] [
+
+{"comment": "initial import", "author": "/people/ImportBot", "ip": "127.0.0.1", "created": "2008-11-16T07:25:54.131674", "data": "{\"machine_comment\": \"marc_loc_updates/v36.i40.records.utf8:10197505:1045\"}", "key": "/authors/OL1A", "action": "update", "author_id": 17874995, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 6}]", "id": 31937813, "machine_comment": "marc_loc_updates/v36.i40.records.utf8:10197505:1045", "revision": 6}, 
+
+{"comment": "fix author name", "author": null, "ip": "127.0.0.1", "created": "2008-08-18T14:57:20.997328", "data": null, "key": "/authors/OL1A", "action": "update", "author_id": null, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 5}]", "id": 17883897, "machine_comment": null, "revision": 5}, 
+
+{"comment": "", "author": "/people/anand", "ip": "59.92.147.107", "created": "2008-04-07T03:18:09.443889", "data": null, "key": "/authors/OL1A", "action": "update", "author_id": 9882042, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 4}]", "id": 9893030, "machine_comment": null, "revision": 4}, 
+
+{"comment": "", "author": "/people/anand", "ip": "59.92.147.107", "created": "2008-04-07T03:15:28.420466", "data": null, "key": "/authors/OL1A", "action": "update", "author_id": 9882042, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 3}]", "id": 9893026, "machine_comment": null, "revision": 3}, 
+
+{"comment": null, "author": null, "ip": null, "created": "2008-04-01T03:28:50.625462", "data": null, "key": "/authors/OL1A", "action": null, "author_id": null, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 1}]", "id": 39207994, "machine_comment": null, "revision": 1}, 
+
+{"comment": "initial import", "author": null, "ip": null, "created": "2008-04-01T03:28:50.625462", "data": null, "key": "/authors/OL1A", "action": "update", "author_id": null, "changes": "[{\"key\": \"/authors/OL1A\", \"revision\": 2}]", "id": 97, "machine_comment": null, "revision": 2}]

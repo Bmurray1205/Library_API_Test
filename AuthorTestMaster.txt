@@ -1,0 +1,26 @@
+2016-07-03 11:34:16  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-03 11:34:16  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:16  [utility.Log] (main:)  [INFO]  PASS: Authors JSON Test1->Authors Match
+2016-07-03 11:34:16  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe -H 'Accept: application/json' http://openlibrary.org/authors/OL1A -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO]  PASS: Authors JSON Test2->Authors Match
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO] Test Author Works using default
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO] Test Author Works using limit of 3
+2016-07-03 11:34:19  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=3 -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned default or set limit of 3
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] Test Author Works using limit of -1
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=3 -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned default or set limit of 3
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] Test Author Works using limit of string
+2016-07-03 11:34:20  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=test -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO] Test Author Works using limit of zero
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=0 -k -o C:\Users\GoodHome\workspace\skillSoft\ftpTemp.txt
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-03 11:34:21  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-03 11:34:21  [utility.Log] (main:)  [TEST COMPLETE] Author test

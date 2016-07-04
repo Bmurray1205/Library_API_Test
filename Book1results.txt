@@ -1,0 +1,7 @@
+2016-07-04 06:48:21  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-04 06:48:21  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/books/OL1M.json -k -o C:\Users\GoodHome\workspace\skillSoft\curlTemp.txt
+2016-07-04 06:48:21  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json -k -o C:\Users\GoodHome\workspace\skillSoft\curlTemp.txt
+2016-07-04 06:48:22  [utility.Log] (main:)  [INFO]  PASS: Books JSON Test1->Books Match
+2016-07-04 06:48:22  [utility.Log] (main:)  [INFO] cmd /C C:\Users\GoodHome\workspace\skillSoft\curl\curl.exe http://openlibrary.org/authors/OASDJ!.json -k -o C:\Users\GoodHome\workspace\skillSoft\curlTemp.txt
+2016-07-04 06:48:22  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found
+2016-07-04 06:48:22  [utility.Log] (main:)  [TEST COMPLETE] Book test
