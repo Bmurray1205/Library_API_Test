@@ -298,7 +298,7 @@ public class library {
 	{
 		sFormat=sFormat.replace(".", "");
 		sLibraryURL=sLibraryURL.replace("http", "https");
-		return "cmd /C " + gsToolsPath + "curl.exe -s -H 'Accept: application/" + sFormat+ "' " + sLibraryURL + " -k -o " + gsFlagFileName;
+		return "cmd /C " + gsToolsPath + "curl.exe -s -H \"Accept: application/" + sFormat+ "\" " + sLibraryURL + " -k -o " + gsFlagFileName;
 	}
 	
 	/**
@@ -310,7 +310,7 @@ public class library {
 	{
 		if (sLibraryURL.contains(gsRDF))
 			sLibraryURL=sLibraryURL.replace("http", "https");
-		return "cmd /C " + gsToolsPath + "curl.exe '" + sLibraryURL + "' -k -o " + gsFlagFileName;
+		return "cmd /C " + gsToolsPath + "curl.exe \"" + sLibraryURL + "\" -k -o " + gsFlagFileName;
 	}
 	
 	/**

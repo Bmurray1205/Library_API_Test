@@ -13,17 +13,27 @@ public class QueryTest {
 		// TODO Auto-generated method stub
 		Log.testSetup();
 		//returns all fields
+		//ok works now 51 results
 		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "*", "", "");
-		//returns all fields
-		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "title", "", "");
-		//doesnt work
+		//works
+		String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "id", "", "");
+		//good returns just the keys
 		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "", "", "");
+		//returns key and title
+		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "title", "", "");
+		//returns just 2
+		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "title", "2", "");
+		//returns next 2
+		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "title", "2", "2");
+		
+		//returns just key
 		//String sResults=library.getQueryEditionsAndWorks(sBook1, "", "", "");
-		String sResults=library.login();
+		//returns all
+		//String sResults=library.getQueryEditionsAndWorks(sBook1, "*", "", "");
+		//title plus key
+		//String sResults=library.getQueryEditionsAndWorks(sBook1, "title", "", "");
+		//String sResults=library.login();
 		//doesnt work
-		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "", "2", "");
-		//doesnt work
-		//String sResults=library.getQueryEditionsAndAuthors(sAuthor1, "key", "", "");
 		Log.info(sResults);
 		//TODO: get list of author works and compare to master
 		Log.endTestCase("Author test");

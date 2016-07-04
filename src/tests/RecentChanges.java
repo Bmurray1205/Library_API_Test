@@ -11,6 +11,12 @@ public class RecentChanges {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Log.testSetup();
+		testRecentChanges();
+		Log.endTestCase("Recent Changes test");
+	}
+	
+	public static void testRecentChanges()
+	{
 		//doesn't work when i try to add 
 		//Parameters, type, key and author can be specified to limit the results to modifications to objects of specified type, specified key and by an author respectively
 		//String sResults=library.getRecentChanges("5", "", "edit-book");
@@ -20,7 +26,7 @@ public class RecentChanges {
 		//String sResults=library.getRecentChanges("5", "2");
 		
 		Log.info("Test Recent Changes using limit of 5");
-		String sResults=library.getRecentChanges("5", "2");
+		String sResults=library.getRecentChanges("5", "");
 		Log.info(sResults);
 		//getCount(sResults);
 		checkResults("5", getCount(sResults));
@@ -68,7 +74,7 @@ public class RecentChanges {
 		checkResults("1000", getCount(sResults));
 		//Log.info(sResults);
 		//getCount(sResults);
-		Log.endTestCase("Recent Changes test");
+		
 	}
 	
 	public static void checkResults(String sExp, String sAct)

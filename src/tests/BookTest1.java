@@ -44,14 +44,14 @@ public class BookTest1 {
 			Log.fail("Books JSON Test1->Books don't match");
 	
 		//Accept: header doesnt seem to work for me
-		/*sResults=library.getBook(sBook, library.gsJSON, true);
-		Log.info(sResults);
+		sResults=library.getBook(sBook, library.gsJSON, true);
+		//Log.info(sResults);
 		BookAct=Book.setBookData2(sResults);
 		//compare Book objects (short version)
 		if (BookAct.equals(Book1))
-			Log.pass("Books JSON Test1->Books Match");
+			Log.pass("Books JSON Test2->Books Match");
 		else
-			Log.fail("Books JSON Test1->Books don't match");*/
+			Log.fail("Books JSON Test2->Books don't match");
 	
 		//TODO: add RDF format
 	}

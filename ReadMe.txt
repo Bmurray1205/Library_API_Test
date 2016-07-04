@@ -1,3 +1,30 @@
+Before beginning testing I created AsIsBatch files using the exact syntax as the API calls in the URL:
+https://openlibrary.org/dev/docs/restful_api:
+
+curl http://openlibrary.org/authors/OL1A.json  GOOD
+curl -s -H 'Accept: application/json' https://openlibrary.org/books/OL1M FAILS no results returned
+curl http://openlibrary.org/authors/OL1A.json?callback=process GOOD
+curl https://openlibrary.org/books/OL6807502M.rdf GOOD
+curl -H 'Accept: application/rdf+xml' https://openlibrary.org/books/OL6807502M.rdf  FAIL no results returned
+curl 'http://openlibrary.org/works/OL27258W/editions.json?limit=5' FAIL  but works without single quotes
+curl http://openlibrary.org/authors/OL1A/works.json GOOD
+
+//couldnt get query commands to work until I replace single quote with double quotes
+curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A'
+curl -H 'Accept: application/json' 'https://openlibrary.org/query?type=/type/edition&authors=/authors/OL1A'
+curl 'http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W'
+curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&title='
+curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&*='
+
+
+The following tests run to completion and mostly as expected:
+
+AuthorTest1 performs some simple validation tests including some negative tests.  It also does some testing of getting author works.  I found a couple of issues here that are listed below.
+BookTest1 performs similar tests to above including some editions testing.
+RecentChanges does some basic testing of limits.  As noted below I could not get offsets nor types to work.
+
+
+
 Notes on testing:
 
 

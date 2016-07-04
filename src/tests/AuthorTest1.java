@@ -51,15 +51,14 @@ public class AuthorTest1 {
 		else
 			Log.fail("Authors JSON Test1->Authors don't match");
 		
-		//Accept: header doesnt seem to work for me
-		/*sResults=library.getAuthor(sAuthor, library.gsJSON, true);
+		sResults=library.getAuthor(sAuthor, library.gsJSON, true);
 		//Log.info(sResults);
 		AuthorAct=Author.setAuthorData(sResults);
 		//compare author objects (short version)
 		if (AuthorAct.equals(Author1))
 			Log.pass("Authors JSON Test2->Authors Match");
 		else
-			Log.fail("Authors JSON Test2->Authors don't match");*/
+			Log.fail("Authors JSON Test2->Authors don't match");
 		//TODO: add RDF format checks
 	}
 
