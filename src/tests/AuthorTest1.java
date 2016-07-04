@@ -10,6 +10,7 @@ import tasks.Author;
 import tasks.library;
 import utility.Log;
 
+
 public class AuthorTest1 {
 	
 	public static String sAuthor1="OL1A";
@@ -31,6 +32,7 @@ public class AuthorTest1 {
 		//TODO: get list of author works and compare to master
 		Log.endTestCase("Author test");
 	}
+	
 	
 	/** 
 	* testAuthor - checks for author data 

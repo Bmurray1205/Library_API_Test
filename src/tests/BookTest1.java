@@ -16,7 +16,7 @@ public class BookTest1 {
 	public static String sAuthor1Bio="OL1518080A";
 	public static String sBook1="OL1M";
 	public static String sBook1Info="OL6807502M";
-	public static String sBook2="OL4731M";//different data than book1?
+	public static String sBook2="OL27258W";//different data than book1?
 	public static String sBook3="OL14930760W";
 	public static Book Book1 =  new Book("Kabit\u0101.","$4.50", 304, "1962", "Sachi Rautroy");
 	
@@ -27,6 +27,8 @@ public class BookTest1 {
 		testBook(sBook1);
 		//neg Books test
 		testNegBook(sBook1+"bad");
+		//checking edition counts only, offsets doesnt seem to work
+		testBookEditions(sBook2);
 		Log.endTestCase("Book test");
 	}
 	
@@ -72,15 +74,15 @@ public class BookTest1 {
 	{
 		//author's works...GOOD
 		//first no limit and make sure default limit of 20 is imposed if num works greater than 20
-		Log.info("Test Author Works using default");
+		Log.info("Test Book Editions using default");
 		String sResults=library.getBookEditions(sBook, "", "");
-		//Log.info(sResults);
+		Log.info(sResults);
 		try {
 			JSONObject obj = new JSONObject(sResults);
 			//returns how many authors works
 			String sEditions = obj.getString("size");
 			//not sure why but size value is off by one
-			int iEditions = Integer.parseInt(sEditions)-1;
+			int iEditions = Integer.parseInt(sEditions);
 			Log.info("Book " + sBook + " has " + iEditions + " Works");
 			//this works for looping through array
 			JSONArray getArray = obj.getJSONArray("entries");
@@ -90,6 +92,89 @@ public class BookTest1 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		//test limit < default and less than expected size
+		Log.info("Test Author Works using limit of 3");
+		sResults=library.getBookEditions(sBook, "3", "");
+		Log.info(sResults);
+		try {
+			JSONObject obj = new JSONObject(sResults);
+			//returns how many authors works
+			String sEditions = obj.getString("size");
+			//not sure why but size value is off by one
+			int iEditions = Integer.parseInt(sEditions);
+			Log.info("Book " + sBook + " has " + iEditions + " Works");
+			//this works for looping through array
+			JSONArray getArray = obj.getJSONArray("entries");
+			checkWorksCount(iEditions, getArray.length(), 3);
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//test limit = negative 1 is bad query and returns previous set of results
+		Log.info("Test Author Works using limit of -1");
+		sResults=library.getBookEditions(sBook, "-1", "");
+		//Log.info(sResults);
+		try {
+			JSONObject obj = new JSONObject(sResults);
+			//returns how many authors works
+			String sEditions = obj.getString("size");
+			//not sure why but size value is off by one
+			int iEditions = Integer.parseInt(sEditions);
+			Log.info("Book " + sBook + " has " + iEditions + " Works");
+			//this works for looping through array
+			JSONArray getArray = obj.getJSONArray("entries");
+			checkWorksCount(iEditions, getArray.length(), 3);
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//test limit = string acts like default
+		Log.info("Test Author Works using limit of string");
+		sResults=library.getBookEditions(sBook, "", "");
+		//Log.info(sResults);
+		try {
+			JSONObject obj = new JSONObject(sResults);
+			//returns how many authors works
+			String sEditions = obj.getString("size");
+			//not sure why but size value is off by one
+			int iEditions = Integer.parseInt(sEditions);
+			Log.info("Book " + sBook + " has " + iEditions + " Works");
+			//this works for looping through array
+			JSONArray getArray = obj.getJSONArray("entries");
+			checkWorksCount(iEditions, getArray.length(), 20);
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//test limit = zero acts like default
+		Log.info("Test Author Works using limit of zero");
+		sResults=library.getBookEditions(sBook, "", "");
+		//Log.info(sResults);
+		try {
+			JSONObject obj = new JSONObject(sResults);
+			//returns how many authors works
+			String sEditions = obj.getString("size");
+			//not sure why but size value is off by one
+			int iEditions = Integer.parseInt(sEditions);
+			Log.info("Book " + sBook + " has " + iEditions + " Works");
+			//this works for looping through array
+			JSONArray getArray = obj.getJSONArray("entries");
+			checkWorksCount(iEditions, getArray.length(), 20);
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	public static void checkWorksCount(int iExp, int iArraySize, int iDefault)
 	{

@@ -20,7 +20,7 @@ public class Log {
 	
 	public static void testSetup(){
 		//clean up old logs first
-		String textLogName = System.getProperty("user.dir")+"\\logs\\results.txt";
+		String textLogName = System.getProperty("user.dir")+"\\results.txt";
 		if(fileExists(textLogName))
 		{
 			//maybe back up old one?
