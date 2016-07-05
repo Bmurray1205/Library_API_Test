@@ -83,7 +83,7 @@ public class AuthorTest1 {
 	}
 
 	/** 
-	* testAuthorWorks - does various test for author works
+	* testAuthorWorks - does various test for author works around offsets
 	* @param String sAuthor - invalid author
 	* @author Brian Murray   	
 	*/
@@ -95,14 +95,14 @@ public class AuthorTest1 {
 		String sResults=library.getAuthorsWorks(sAuthor, "");
 		//Log.info(sResults);
 		try {
-			JSONObject obj = new JSONObject(sResults);
+			JSONObject authorObj = new JSONObject(sResults);
 			//returns how many authors works
-			String sWorks = obj.getString("size");
+			String sWorks = authorObj.getString("size");
 			//not sure why but size value is off by one
 			int iWorks = Integer.parseInt(sWorks)-1;
 			Log.info("Author " + sAuthor + " has " + iWorks + " Works");
 			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
+			JSONArray getArray = authorObj.getJSONArray("entries");
 			checkWorksCount(iWorks, getArray.length(), 20);
 
 		} catch (JSONException e) {
@@ -115,14 +115,14 @@ public class AuthorTest1 {
 		sResults=library.getAuthorsWorks(sAuthor, "3");
 		//Log.info(sResults);
 		try {
-			JSONObject obj = new JSONObject(sResults);
+			JSONObject authorObj = new JSONObject(sResults);
 			//returns how many authors works
-			String sWorks = obj.getString("size");
+			String sWorks = authorObj.getString("size");
 			//not sure why but size value is off by one
 			int iWorks = Integer.parseInt(sWorks)-1;
 			Log.info("Author " + sAuthor + " has " + iWorks + " Works");
 			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
+			JSONArray getArray = authorObj.getJSONArray("entries");
 			checkWorksCount(iWorks, getArray.length(), 3);
 
 		} catch (JSONException e) {
@@ -130,39 +130,32 @@ public class AuthorTest1 {
 			e.printStackTrace();
 		}
 		
+		//this fails for author
 		//test limit = negative 1 is bad query and returns previous set of results
 		Log.info("Test Author Works using limit of -1");
 		sResults=library.getAuthorsWorks(sAuthor, "3");
 		//Log.info(sResults);
-		try {
-			JSONObject obj = new JSONObject(sResults);
-			//returns how many authors works
-			String sWorks = obj.getString("size");
-			//not sure why but size value is off by one
-			int iWorks = Integer.parseInt(sWorks)-1;
-			Log.info("Author " + sAuthor + " has " + iWorks + " Works");
-			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
-			checkWorksCount(iWorks, getArray.length(), 3);
-
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String sExpErr="LIMIT must not be negative";
+		if (sResults.contains(sExpErr))
+			Log.pass("Error was correctly found: " + sExpErr);
+		else
+			Log.fail("Error was not correctly found: " + sExpErr);
 		
 		//test limit = string acts like default
+		//for RecentChanges this returns an error
+		//I think it should be consistent, so maybe a defect
 		Log.info("Test Author Works using limit of string");
 		sResults=library.getAuthorsWorks(sAuthor, "test");
 		//Log.info(sResults);
 		try {
-			JSONObject obj = new JSONObject(sResults);
+			JSONObject authorObj = new JSONObject(sResults);
 			//returns how many authors works
-			String sWorks = obj.getString("size");
+			String sWorks = authorObj.getString("size");
 			//not sure why but size value is off by one
 			int iWorks = Integer.parseInt(sWorks)-1;
 			Log.info("Author " + sAuthor + " has " + iWorks + " Works");
 			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
+			JSONArray getArray = authorObj.getJSONArray("entries");
 			checkWorksCount(iWorks, getArray.length(), 20);
 
 		} catch (JSONException e) {
@@ -175,14 +168,14 @@ public class AuthorTest1 {
 		sResults=library.getAuthorsWorks(sAuthor, "0");
 		//Log.info(sResults);
 		try {
-			JSONObject obj = new JSONObject(sResults);
+			JSONObject authorObj = new JSONObject(sResults);
 			//returns how many authors works
-			String sWorks = obj.getString("size");
+			String sWorks = authorObj.getString("size");
 			//not sure why but size value is off by one
 			int iWorks = Integer.parseInt(sWorks)-1;
 			Log.info("Author " + sAuthor + " has " + iWorks + " Works");
 			//this works for looping through array
-			JSONArray getArray = obj.getJSONArray("entries");
+			JSONArray getArray = authorObj.getJSONArray("entries");
 			checkWorksCount(iWorks, getArray.length(), 20);
 
 		} catch (JSONException e) {

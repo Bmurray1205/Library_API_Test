@@ -2,7 +2,6 @@ package utility;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
@@ -20,7 +19,6 @@ public class Log {
 	
 	public static void testSetup(){
 		//clean up old logs first
-		String sTem = System.getProperty("user.dir");
 		String textLogName = System.getProperty("user.dir")+"\\results.txt";
 		if(fileExists(textLogName))
 		{
@@ -152,6 +150,19 @@ public class Log {
 			fail("Expected number of results not returned " + sExp + ":" + sAct);
 	}
 
+	/**
+	 * checkString -  checks that two strings match and logs pass/fail
+	 * @param sExp - the expected results
+	 * @param sAct - the actual results
+	 * @author Brian Murray
+	 */
+	public static void checkString(String sExp, String sAct)
+	{
+		if (sExp.equalsIgnoreCase(sAct))
+			pass("Expected result returned "+sExp);
+		else
+			fail("Expected result not returned " + sExp + ":" + sAct);
+	}
 
 	/**
 	 * Sleep for a specified number of seconds
@@ -164,6 +175,28 @@ public class Log {
 			Thread.sleep((long) (numberOfSecondsToSleep * 1000));
 		} catch (InterruptedException e) {
 		}
+	}
+	
+	/**
+	 * Count substring occurences in a source string.
+	 * @param source	source string
+	 * @param sub		substring to count
+	 * @return			number of substring occurences
+	* author Brian Murray
+	 */
+	//used
+	public static int count(String source, String sub) {
+		int count = 0;
+		int i = 0, j = 0;		
+		while (true) {
+			i = source.indexOf(sub, j);
+			if (i == -1) {
+				break;
+			}
+			count++;
+			j = i + sub.length();
+		}
+		return count;
 	}
 	
 }

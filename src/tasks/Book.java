@@ -85,7 +85,7 @@ public class Book {
 	
 	/** 
 	* equals - compares 2 Book Objects
-	* @param Bookr obj - the Book to compare to
+	* @param Book obj - the Book to compare to
 	* @return boolean - are the objects the same
 	* @author Brian Murray   	
 	*/

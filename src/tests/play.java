@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import tasks.library;
 import utility.Log;
 
-public class test1 {
+public class play {
 	
 	public static String sAuthor1="OL1A";
 	public static String sAuthor1Bio="OL1518080A";

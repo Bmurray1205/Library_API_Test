@@ -2,12 +2,9 @@ package tests;
 
 
 import java.util.Iterator;
-
-import org.apache.log4j.LogSF;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import tasks.library;
 import utility.Log;
 
@@ -80,6 +77,12 @@ public class AuthorWorksAndEditions {
 		
 	}
 	
+	/** 
+	* getCount - Gets the count of the items in the returned results array
+	* @param sResults -  the JSON results
+	* @return String - the count of the editions returned
+	* @author Brian Murray   	
+	*/
 	public static String getCount(String sResults)
 	{
 		try {
@@ -124,26 +127,5 @@ public class AuthorWorksAndEditions {
 		}
 	}
 	
-
-	public static void getAuthorData(String s)
-	{
-		try {
-			JSONObject obj = new JSONObject(s);
-			Log.info("name:" + obj.getString("name"));
-			Log.info("personal name: " + obj.getString("personal_name"));
-			Log.info("death date: " + obj.getString("death_date"));
-			Log.info("key: " + obj.getString("key"));
-			Log.info("birth date: " + obj.getString("birth_date"));
-			Log.info("id: " + obj.getString("id"));
-			Log.info("revision: " + obj.getString("revision"));
-			Log.info("Last Modified:type:" + obj.getJSONObject("last_modified").getString("type"));
-			Log.info("Last Modified:value:" + obj.getJSONObject("last_modified").getString("value"));
-			Log.info("Type:key:" + obj.getJSONObject("type").getString("key"));
-		
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}	
 
 }

@@ -190,7 +190,7 @@ public class library {
 			sNum="?"+gsSetLimit+sNum;
 		if (sOffSet.length()>0)
 			sNum=sNum+"&"+gsSetOffset+sOffSet;
-		String sToolString = constructCurlString (gsLibraryRoot+gsRecentChanges+sNum);
+		String sToolString = constructCurlString3 (gsLibraryRoot+gsRecentChanges+sNum);
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
@@ -203,7 +203,7 @@ public class library {
 			sNum=sType+"?"+gsSetLimit+sNum;
 		if (sOffSet.length()>0)
 			sNum=sNum+"&"+gsSetOffset+sOffSet;
-		String sToolString = constructCurlString (gsLibraryRoot+gsRecentChanges+sNum);
+		String sToolString = constructCurlString3 (gsLibraryRoot+gsRecentChanges+sNum);
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
@@ -266,6 +266,7 @@ public class library {
 	* @author Brian Murray   	
 	*/
 	//JSON format only
+	//question..wasn't sure if offset was supported...don't think so.
 	public static String getBookEditions (String sKey, String sNum, String sOffSet)
 	{
 		if (sNum.length()>0)
