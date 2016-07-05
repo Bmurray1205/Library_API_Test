@@ -1,0 +1,60 @@
+2016-07-05 09:52:09  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 09:52:09  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:09  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 17
+2016-07-05 09:52:09  [utility.Log] (main:)  [INFO] This author OL1A has 17 works
+2016-07-05 09:52:09  [utility.Log] (main:)  [INFO] This author OL1A has 16 works
+2016-07-05 09:52:09  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930760W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] [{"publish_date": "2003", "key": "/books/OL3337558M", "revision": 4}]
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] This work OL14930760W has 1 editions
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930762W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] [{"publish_date": "1998", "key": "/books/OL6861411M", "revision": 2}]
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] This work OL14930762W has 1 editions
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930765W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] [{"publish_date": "2006", "key": "/books/OL22562084M", "revision": 2}, {"publish_date": "1968", "key": "/books/OL5398544M", "revision": 2}, {"publish_date": "1995", "key": "/books/OL505087M", "revision": 2}]
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] This work OL14930765W has 3 editions
+2016-07-05 09:52:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930753W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] [{"publish_date": "2003", "key": "/books/OL3718404M", "revision": 3}]
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] This work OL14930753W has 1 editions
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930755W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] [{"publish_date": "1975", "key": "/books/OL4702164M", "revision": 3}]
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] This work OL14930755W has 1 editions
+2016-07-05 09:52:11  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930758W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] [{"publish_date": "2004", "key": "/books/OL3337481M", "revision": 3}]
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] This work OL14930758W has 1 editions
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930759W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] [{"publish_date": "1965", "key": "/books/OL4731M", "revision": 2}]
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] This work OL14930759W has 1 editions
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930751W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] [{"publish_date": "1967", "key": "/books/OL18477M", "revision": 2}]
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] This work OL14930751W has 1 editions
+2016-07-05 09:52:12  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930752W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] [{"publish_date": "1962", "key": "/books/OL22867896M", "revision": 2}]
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] This work OL14930752W has 1 editions
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930757W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] [{"publish_date": "1968", "key": "/books/OL5177943M", "revision": 3}]
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] This work OL14930757W has 1 editions
+2016-07-05 09:52:13  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930750W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] [{"publish_date": "1966", "key": "/books/OL11921M", "revision": 2}]
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] This work OL14930750W has 1 editions
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930764W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] [{"publish_date": "1988", "key": "/books/OL1686365M", "revision": 2}]
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] This work OL14930764W has 1 editions
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930756W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] [{"publish_date": "1970", "key": "/books/OL5400560M", "revision": 2}]
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] This work OL14930756W has 1 editions
+2016-07-05 09:52:14  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930761W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] [{"publish_date": "1972", "key": "/books/OL21399778M", "revision": 2}]
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] This work OL14930761W has 1 editions
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930763W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] [{"publish_date": "1996", "key": "/books/OL319649M", "revision": 4}]
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] This work OL14930763W has 1 editions
+2016-07-05 09:52:15  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL14930766W&publish_date=&revision=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] [{"publish_date": "1962", "key": "/books/OL1M", "revision": 51}]
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] This work OL14930766W has 1 editions
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] This Author has a total of 18 editions
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 18
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] Cross check results with results from Authors total editions
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO] 18
+2016-07-05 09:52:16  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 18
+2016-07-05 09:52:16  [utility.Log] (main:)  [TEST COMPLETE] Author's works and Editions test

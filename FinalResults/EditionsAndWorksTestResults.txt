@@ -1,0 +1,54 @@
+2016-07-05 11:42:31  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 11:42:31  [utility.Log] (main:)  [INFO] Editions using no arguments
+2016-07-05 11:42:31  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] 8
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 8
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] Editions using limit 15
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=7" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] 7
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 7
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] Editions using limit 1
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] 1
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 1
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] Editions using limit Max Plus
+2016-07-05 11:42:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=25" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO] 8
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 8
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO] Editions using limit -1
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: LIMIT must not be negative
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO] Editions using limit 5 offset -1
+2016-07-05 11:42:33  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=5&offset=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: OFFSET must not be negative
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO] Editions using limit test
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...ction t WHERE 1 = 1 ORDER BY t.created DESC LIMIT test OFFSE...
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO] Editions using limit 5 offset test
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&limit=5&offset=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:34  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...on t WHERE 1 = 1 ORDER BY t.created DESC LIMIT 2 OFFSET test
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] Editions using property title
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&title=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 8
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 8
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 8
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] Editions using property title and limit 3
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&title=&limit=3" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: "key" property was correctly found: "key"
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 0
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] Editions using property *, limit 3 and offset 2
+2016-07-05 11:42:35  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W&*=&limit=3&offset=2" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO]  PASS:  "title" property was correctly found:  "title"
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO] 3
+2016-07-05 11:42:36  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
+2016-07-05 11:42:36  [utility.Log] (main:)  [TEST COMPLETE] Edition & Works test

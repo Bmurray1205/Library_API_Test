@@ -1,0 +1,49 @@
+2016-07-05 10:01:00  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 10:01:00  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of 5
+2016-07-05 10:01:00  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=5" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] 5
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 5
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of 1
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] 1
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 1
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of -1
+2016-07-05 10:01:01  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: LIMIT must not be negative
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of 15
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=15" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] 15
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 15
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of 0 returns 0
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=0" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] []
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] 0
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 0
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of string test
+2016-07-05 10:01:02  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:03  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: column \"test\" does not exist\nLINE 1: ...ction t WHERE 1 = 1 ORDER BY t.created DESC LIMIT test OFFSE...
+2016-07-05 10:01:03  [utility.Log] (main:)  [INFO] Test Recent Changes using limit of empty string, default of 1000 returned
+2016-07-05 10:01:03  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO] 1000
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 1000
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO] Test Recent Changes using Offset of 1
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=2" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO] TimeStamp for record 2 is: 2016-07-05T13:58:49.768744
+2016-07-05 10:01:04  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=2&offset=1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] TimeStamp for record 1 is: 2016-07-05T13:58:49.768744
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] TimeStamp for record 1 with offset of 1 should equal record 2 with no offset
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO]  PASS: Expected result returned 2016-07-05T13:58:49.768744
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] Test Recent Changes using Offset of 15
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=16" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] TimeStamp for record 16 is: 2016-07-05T13:51:41.403422
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=2&offset=15" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] TimeStamp for record 1 is: 2016-07-05T13:51:41.403422
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] TimeStamp for record 1 with offset of 1 should equal record 2 with no offset
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO]  PASS: Expected result returned 2016-07-05T13:51:41.403422
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] Test Recent Changes using offset of -1
+2016-07-05 10:01:05  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=2&offset=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:06  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: OFFSET must not be negative
+2016-07-05 10:01:06  [utility.Log] (main:)  [INFO] Test Recent Changes using offset of a String
+2016-07-05 10:01:06  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/recentchanges.json?limit=2&offset=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 10:01:06  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: column \"test\" does not exist\nLINE 1: ...on t WHERE 1 = 1 ORDER BY t.created DESC LIMIT 2 OFFSET test
+2016-07-05 10:01:06  [utility.Log] (main:)  [TEST COMPLETE] Recent Changes test

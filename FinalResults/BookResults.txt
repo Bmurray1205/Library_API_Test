@@ -1,0 +1,29 @@
+2016-07-05 08:42:24  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 08:42:24  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/books/OL1M.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:25  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:25  [utility.Log] (main:)  [INFO]  PASS: Books JSON Test1->Books Match
+2016-07-05 08:42:25  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe -s -H "Accept: application/json" https://openlibrary.org/books/OL1M -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:26  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:26  [utility.Log] (main:)  [INFO]  PASS: Books JSON Test2->Books Match
+2016-07-05 08:42:26  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OASDJ!.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: "error": "notfound"
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO] Test Book Editions using default
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/works/OL27258W/editions.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO] Book OL27258W has 20 Works
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO]  PASS: Book editions equals returned count of 20
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO] Test Book Editions using limit of 3
+2016-07-05 08:42:27  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/works/OL27258W/editions.json?limit=3 -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO] Book OL27258W has 20 Works
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO]  PASS: Book editions equals returned default or set limit of 3
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO] Test Book Editions using limit of -1
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/works/OL27258W/editions.json?limit=-1 -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: LIMIT must not be negative
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO] Test Book Editions using limit of string
+2016-07-05 08:42:28  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/works/OL27258W/editions.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO] Book OL27258W has 20 Works
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO]  PASS: Book editions equals returned count of 20
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO] Test Book Editions using limit of zero
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/works/OL27258W/editions.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO] Book OL27258W has 20 Works
+2016-07-05 08:42:29  [utility.Log] (main:)  [INFO]  PASS: Book editions equals returned count of 20
+2016-07-05 08:42:29  [utility.Log] (main:)  [TEST COMPLETE] Book test

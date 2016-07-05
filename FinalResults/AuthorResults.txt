@@ -1,0 +1,28 @@
+2016-07-05 08:41:25  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 08:41:25  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:26  [utility.Log] (main:)  [INFO]  PASS: Authors JSON Test1->Authors Match
+2016-07-05 08:41:26  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe -s -H "Accept: application/json" https://openlibrary.org/authors/OL1A -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO]  PASS: Authors JSON Test2->Authors Match
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OASDJ!.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: "error": "notfound"
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO] Test Author Works using default
+2016-07-05 08:41:27  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] Test Author Works using limit of 3
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=3 -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned default or set limit of 3
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] Test Author Works using limit of -1
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=3 -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: LIMIT must not be negative
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] Test Author Works using limit of string
+2016-07-05 08:41:28  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=test -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO] Test Author Works using limit of zero
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe http://openlibrary.org/authors/OL1A/works.json?limit=0 -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO] Author OL1A has 16 Works
+2016-07-05 08:41:29  [utility.Log] (main:)  [INFO]  PASS: Author works equals returned count of 16
+2016-07-05 08:41:29  [utility.Log] (main:)  [TEST COMPLETE] Author test
