@@ -2,7 +2,7 @@ Being new to both GIT and RDF I had some decisions to make if I was to get the a
 
 My approach was to get some basic testing of all API calls.  I spent more time on Book and Author as representative of the others.  I took liberties with both Book and Author objects by not creating all the properties.  Again, this was a time factor.
 
-Overall, I was having quite a bit of fun with this.  I am new to the library and books space, so it was a learning experience.  I feel like I could spend a lot more time, but I thought it prudent to wrap this up sooner than later as I do still have my own job to do.
+Overall, I was having quite a bit of fun with this.  I am new to the library and books space, so it was a learning experience.  I feel like I could spend a lot more time with this, but I thought it prudent to wrap this up sooner than later as I do still have my own job to do.
 
 To summarize the tests that I have created:
 
