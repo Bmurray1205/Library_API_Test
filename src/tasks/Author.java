@@ -6,6 +6,11 @@ import org.json.JSONObject;
 import utility.Log;
 
 public class Author {
+	
+	//{"name": "Sachi Rautroy", "personal_name": "Sachi Rautroy", "death_date": "2004", 
+	//"last_modified": {"type": "/type/datetime", "value": "2008-11-16T07:25:54.131674"}, 
+	//"key": "/authors/OL1A", "birth_date": "1916", "type": {"key": "/type/author"}, "id": 97, "revision": 6}
+
 
 	//TODO: add rest of the fields
 	private static final String gsName="name";

@@ -17,6 +17,10 @@ public class Log {
 	private static Logger Log = Logger.getLogger(Log.class.getName());//
 	public static int iWait=10;
 	
+
+	/**
+	 * Setups the logging, deleting old results if necessary
+	 */
 	public static void testSetup(){
 		//clean up old logs first
 		String textLogName = System.getProperty("user.dir")+"\\results.txt";

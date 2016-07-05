@@ -95,8 +95,8 @@ public class EditionsAndWorksTest {
 	{
 		//returns key field only and total record
 		//interesting, when no limit then an extra field is returned with Work key
-		Log.info("Editions using no arguments");
-		String sResults=library.getQueryEditionsAndWorks(sWork1, "", "", "");
+		Log.info("Editions using no arguments with header format");
+		String sResults=library.getQueryEditionsAndWorks(sWork1, "", "", "", true);
 		//Log.info(sResults);
 		Log.checkResults("8", getCount(sResults));
 		

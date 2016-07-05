@@ -6,6 +6,15 @@ import org.json.JSONObject;
 
 public class Book {
 	
+	
+	//{"pagination": "8, 304 p.", "identifiers": {}, "classifications": {}, "key": "/books/OL1M", "title": "Kabit\u0101.",
+	//"lccn": ["sa 64009056"], "price": "$4.50", "number_of_pages": 304, "created": {"type": "/type/datetime",
+	//"value": "2008-04-01T03:28:50.625462"}, "lc_classifications": ["PK2579.R255 K3"], "publish_date": "1962", 
+	//"last_modified": {"type": "/type/datetime", "value": "2010-07-27T14:44:34.015872"}, 
+	//"authors": [{"key": "/authors/OL1A"}], "latest_revision": 51, "oclc_numbers": ["31249133"], 
+	//"works": [{"key": "/works/OL14930766W"}], "type": {"key": "/type/edition"}, 
+	//"notes": "Bibliographical footnotes.\r\nIn Oriya.", "revision": 51}
+	
 	//TODO: add rest of the fields
 	private static final String gsTitle="title";
 	private static final String gsPrice="price";

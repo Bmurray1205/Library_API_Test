@@ -1,54 +1,54 @@
-2016-07-05 11:31:07  [utility.Log] (main:)  [SCRIPT START] 
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO] Editions using no arguments
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO] 19
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO] Editions using limit 15
-2016-07-05 11:31:07  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=15" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] 15
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 15
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] Editions using limit 1
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] 1
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 1
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] Editions using limit Max Plus
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=25" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] 19
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] Editions using limit -1
-2016-07-05 11:31:08  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: LIMIT must not be negative
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO] Editions using limit 5 offset -1
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=5&offset=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: OFFSET must not be negative
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO] Editions using limit test
-2016-07-05 11:31:09  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...ction t WHERE 1 = 1 ORDER BY t.created DESC LIMIT test OFFSE...
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] Editions using limit 5 offset test
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=5&offset=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...on t WHERE 1 = 1 ORDER BY t.created DESC LIMIT 2 OFFSET test
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] Editions using property title
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&title=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] 19
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] 19
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] Editions using property title and limit 3
-2016-07-05 11:31:10  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&title=&limit=3" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: "key" property was correctly found: "key"
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 0
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] Editions using property *, limit 3 and offset 2
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&*=&limit=3&offset=2" -k -o C:\gitFolder\skillSoft\curlTemp.txt
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS:  "title" property was correctly found:  "title"
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO] 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
-2016-07-05 11:31:11  [utility.Log] (main:)  [TEST COMPLETE] Edition & Authors test
+2016-07-05 12:41:30  [utility.Log] (main:)  [SCRIPT START] 
+2016-07-05 12:41:30  [utility.Log] (main:)  [INFO] Editions using no arguments
+2016-07-05 12:41:30  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] 19
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] Editions using limit 15
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=15" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] 15
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 15
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] Editions using limit 1
+2016-07-05 12:41:31  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] 1
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 1
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] Editions using limit Max Plus
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=25" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] 19
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] Editions using limit -1
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: LIMIT must not be negative
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] Editions using limit 5 offset -1
+2016-07-05 12:41:32  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=5&offset=-1" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO]  PASS: Error was correctly found: OFFSET must not be negative
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO] Editions using limit test
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...ction t WHERE 1 = 1 ORDER BY t.created DESC LIMIT test OFFSE...
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO] Editions using limit 5 offset test
+2016-07-05 12:41:33  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&limit=5&offset=test" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  FAIL: Error was not correctly found: column \"test\" does not exist\nLINE 1: ...on t WHERE 1 = 1 ORDER BY t.created DESC LIMIT 2 OFFSET test
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] Editions using property title
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&title=" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 19
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 19
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 19
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] Editions using property title and limit 3
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&title=&limit=3" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: "title" property was correctly found: "title"
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: "key" property was correctly found: "key"
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 0
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] Editions using property *, limit 3 and offset 2, header format
+2016-07-05 12:41:34  [utility.Log] (main:)  [INFO] cmd /C C:\gitFolder\skillSoft\curl\curl.exe -s -H "Accept: application/json" "https://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A&*=&limit=3&offset=2" -k -o C:\gitFolder\skillSoft\curlTemp.txt
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO]  PASS:  "title" property was correctly found:  "title"
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO]  PASS: "latest_revision" property was correctly found: "latest_revision"
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO] 3
+2016-07-05 12:41:35  [utility.Log] (main:)  [INFO]  PASS: Expected number of results returned 3
+2016-07-05 12:41:35  [utility.Log] (main:)  [TEST COMPLETE] Edition & Authors test

@@ -179,10 +179,6 @@ public class library {
 	* @return String - the results of the call
 	* @author Brian Murray   	
 	*/
-	//TODO: add support for
-	//Parameters, type, key and author can be specified to limit the results to modifications to objects of specified type, specified key and by an author respectively. Also limit and offset can be specified to limit number of results and offset.
-	//$ curl http://openlibrary.org/recentchanges.json?type=/type/page
-	//$ curl http://openlibrary.org/recentchanges.json?author=/people/anand&offset=20&limit=20
 	//JSON format only
 	public static String getRecentChanges (String sNum, String sOffSet)
 	{
@@ -207,13 +203,15 @@ public class library {
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
+
 	
-	//TODO
-	//Query
-	//The Query API allows querying the Open Library system for matching objects.
-	//$ curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A'
+	//TODO merge these next two
 	/** 
 	* getQueryEditionsAndAuthors - Get Editions and Authors
+	* @param String sKey - the keys to return (author)
+	* @param String Props - the properties to return
+	* @param String sNum - the limit
+	* @param String sOffSet - the Offset
 	* @return String - the results of the call
 	* @author Brian Murray   	
 	*/
@@ -230,9 +228,42 @@ public class library {
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
-	
+
 	/** 
 	* getQueryEditionsAndAuthors - Get Editions and Authors
+	* @param String sKey - the keys to return (author)
+	* @param String Props - the properties to return
+	* @param String sNum - the limit
+	* @param String sOffSet - the Offset
+	* @param boolean bAccept - requested format can be specified using Accept: header
+	* @return String - the results of the call
+	* @author Brian Murray   	
+	*/
+	//curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A'
+	public static String getQueryEditionsAndAuthors (String sKey, String sProps, String sNum, String sOffSet, boolean bAccept)
+	{
+		if (sProps.length()>0)
+			sProps="&"+sProps+"=";
+		if (sNum.length()>0)
+			sProps=sProps+"&"+gsSetLimit+sNum;
+		if (sOffSet.length()>0)
+			sProps=sProps+"&"+gsSetOffset+sOffSet;
+		String sToolString = "";
+		if (bAccept)
+			sToolString = constructCurlString4 (gsLibraryRoot+gsEditionsAuthors+sKey+sProps);
+		else	
+			sToolString = constructCurlString3 (gsLibraryRoot+gsEditionsAuthors+sKey+sProps);
+		runCurl(sToolString);
+		return getSearchResultsString();
+	}
+
+	//TODO merge these next two
+	/** 
+	* getQueryEditionsAndWorks - Get Editions and Works
+* 	* @param String sKey - the keys to return (author)
+	* @param String Props - the properties to return
+	* @param String sNum - the limit
+	* @param String sOffSet - the Offset
 	* @return String - the results of the call
 	* @author Brian Murray   	
 	*/
@@ -246,6 +277,34 @@ public class library {
 		if (sOffSet.length()>0)
 			sProps=sProps+"&"+gsSetOffset+sOffSet;
 		String sToolString = constructCurlString3 (gsLibraryRoot+gsEditionsWorks+sKey+sProps);
+		runCurl(sToolString);
+		return getSearchResultsString();
+	}
+	
+	/** 
+	* getQueryEditionsAndWorks - Get Editions and Works
+* 	* @param String sKey - the keys to return (author)
+	* @param String Props - the properties to return
+	* @param String sNum - the limit
+	* @param String sOffSet - the Offset
+	* @param boolean bAccept - requested format can be specified using Accept: header
+	* @return String - the results of the call
+	* @author Brian Murray   	
+	*/
+	//curl 'http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W'
+	public static String getQueryEditionsAndWorks (String sKey, String sProps, String sNum, String sOffSet, boolean bAccept)
+	{
+		if (sProps.length()>0)
+			sProps="&"+sProps+"=";
+		if (sNum.length()>0)
+			sProps=sProps+"&"+gsSetLimit+sNum;
+		if (sOffSet.length()>0)
+			sProps=sProps+"&"+gsSetOffset+sOffSet;
+		String sToolString = "";
+		if (bAccept)
+			sToolString = constructCurlString4 (gsLibraryRoot+gsEditionsWorks+sKey+sProps);
+		else	
+			sToolString = constructCurlString3 (gsLibraryRoot+gsEditionsWorks+sKey+sProps);
 		runCurl(sToolString);
 		return getSearchResultsString();
 	}
@@ -312,6 +371,19 @@ public class library {
 		if (sLibraryURL.contains(gsRDF))
 			sLibraryURL=sLibraryURL.replace("http", "https");
 		return "cmd /C " + gsToolsPath + "curl.exe \"" + sLibraryURL + "\" -k -o " + gsFlagFileName;
+	}
+	
+	/**
+	 * constructCurlString - build the API Curl executable string for query
+	 * @param sLibraryURL - The server URL
+	 * @author bsm
+	 */
+	public static String constructCurlString4 (String sLibraryURL)
+	{
+		if (sLibraryURL.contains(gsRDF))
+			sLibraryURL=sLibraryURL.replace("http", "https");
+		sLibraryURL=sLibraryURL.replace("http", "https");
+		return "cmd /C " + gsToolsPath + "curl.exe -s -H \"Accept: application/json\"" + " \"" +  sLibraryURL + "\" -k -o " + gsFlagFileName;
 	}
 	
 	/**

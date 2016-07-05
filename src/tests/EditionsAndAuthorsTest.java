@@ -68,8 +68,8 @@ public class EditionsAndAuthorsTest {
 		Log.checkResults("3", getCount(sResults));
 		
 		//should return all properties
-		Log.info("Editions using property *, limit 3 and offset 2");
-		sResults=library.getQueryEditionsAndAuthors(sAuthor1, "*", "3", "2");
+		Log.info("Editions using property *, limit 3 and offset 2, header format");
+		sResults=library.getQueryEditionsAndAuthors(sAuthor1, "*", "3", "2", true);
 		//Log.info(sResults);
 		sExp=" \"title\"";
 		Log.info(Integer.toString(Log.count(sResults, sExp)));
